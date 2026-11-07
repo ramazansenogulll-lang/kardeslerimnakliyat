@@ -1,0 +1,162 @@
+/* Kardeşlerim Nakliyat — build.py bu dosyayı küçültüp her sayfaya gömer. */
+:root{
+  --navy:#12315a;--navy-2:#0c2340;--orange:#c2410c;--orange-2:#9a3412;
+  --ink:#1d2733;--muted:#5b6775;--line:#e3e8ee;--bg:#f6f8fb;--white:#fff;--wa:#15803d;
+  --r:14px;--shadow:0 6px 24px rgba(18,49,90,.10);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;font-size:17px}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--navy)}
+a:hover{color:var(--orange-2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99}
+
+/* Üst bar */
+.top{background:var(--navy-2);color:#cfd9e6;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:6px;padding-bottom:6px}
+.top a{color:#fff;text-decoration:none;font-weight:600}
+.top .addr{display:none}
+header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:19px;line-height:1.1}
+.logo small{display:block;font-weight:600;font-size:12px;color:var(--muted);letter-spacing:.02em}
+.logo svg{width:42px;height:42px;flex:none}
+nav.main details{position:relative}
+nav.main summary{list-style:none;cursor:pointer;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-weight:700;color:var(--navy)}
+nav.main summary::-webkit-details-marker{display:none}
+nav.main ul{list-style:none;margin:0;padding:0}
+nav.main details ul{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:220px;padding:6px}
+nav.main details li a{display:block;padding:11px 14px;text-decoration:none;color:var(--ink);border-radius:8px;font-weight:600}
+nav.main details li a:hover,nav.main a[aria-current]{background:var(--bg);color:var(--orange-2)}
+nav.main .desk{display:none}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:34px 0 40px;overflow:hidden}
+.hero .wrap{display:grid;gap:26px}
+.crumbs{font-size:14px;color:#b9c7d8;margin:0 0 10px}
+.crumbs a{color:#dbe5f1}
+.hero h1{font-size:clamp(28px,7vw,46px);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.hero h1 span{color:#ffb27a}
+.hero p.lead{font-size:18px;color:#dbe5f1;margin:0 0 22px;max-width:36em}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:800;text-decoration:none;font-size:16px;border:2px solid transparent}
+.btn svg{width:20px;height:20px}
+.btn-call{background:var(--orange);color:#fff}.btn-call:hover{background:var(--orange-2);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#116632;color:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}.btn-ghost:hover{border-color:#fff;color:#fff}
+.hero ul.ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:8px;font-size:15px;color:#dbe5f1}
+.hero ul.ticks li{padding-left:26px;position:relative}
+.hero ul.ticks li:before{content:"";position:absolute;left:0;top:6px;width:14px;height:8px;border-left:3px solid #ffb27a;border-bottom:3px solid #ffb27a;transform:rotate(-45deg)}
+.media{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:#1b3f6e}
+.media img{width:100%;height:100%;object-fit:cover}
+.ph{width:100%;height:100%}
+
+/* WhatsApp fiyat akışı */
+section.wa-sec{padding:26px 0 0}
+.wa-flow{background:#ecfdf3;border:2px solid #86efac;border-radius:var(--r);padding:22px;display:grid;gap:18px}
+.wa-flow h2{color:#14532d;font-size:clamp(21px,4.6vw,27px);margin-bottom:8px}
+.wa-flow p{margin:0;color:#29523a}
+.wa-steps{counter-reset:w;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wa-steps li{position:relative;padding-left:46px;color:#29523a;font-size:15.5px}
+.wa-steps li:before{counter-increment:w;content:counter(w);position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--wa);color:#fff;font-weight:800;display:grid;place-items:center}
+.wa-steps b{display:block;color:#14532d}
+.btn-lg{font-size:17px;padding:15px 20px}
+.wa-flow .btn{width:100%;justify-content:center}
+@media (min-width:700px){.wa-flow .btn{width:auto}}
+
+/* Bölümler */
+section{padding:44px 0}
+section.alt{background:var(--bg)}
+h2{font-size:clamp(23px,5vw,31px);line-height:1.25;color:var(--navy);margin:0 0 14px}
+h3{font-size:19px;color:var(--navy);margin:0 0 6px}
+.sec-head{max-width:720px;margin-bottom:24px}
+.sec-head p{color:var(--muted);margin:0}
+.cards{display:grid;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;text-decoration:none;color:var(--ink);display:block;transition:box-shadow .2s,border-color .2s}
+a.card:hover{box-shadow:var(--shadow);border-color:#c9d3df;color:var(--ink)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:#fff1e7;display:grid;place-items:center;margin-bottom:12px}
+.card .ic svg{width:26px;height:26px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.steps{counter-reset:s;display:grid;gap:14px;list-style:none;padding:0;margin:0}
+.steps li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 64px;position:relative}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
+.steps b{display:block;color:var(--navy)}
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;list-style:none;padding:0;margin:0}
+.areas a{display:block;padding:11px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700;color:var(--navy);font-size:15.5px}
+.areas a:hover,.areas a[aria-current]{border-color:var(--orange);color:var(--orange-2)}
+
+/* Makale */
+.layout{display:grid;gap:30px}
+article.prose{max-width:720px}
+.prose h2{margin-top:34px}
+.prose h2:first-child{margin-top:0}
+.prose p{margin:0 0 16px}
+.prose ul{padding-left:20px;margin:0 0 16px}
+.prose li{margin-bottom:6px}
+aside .box{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px}
+aside .box h3{margin-bottom:10px}
+aside ul{list-style:none;margin:0;padding:0}
+aside li a{display:block;padding:7px 0;border-bottom:1px dashed var(--line);text-decoration:none;font-weight:600}
+aside li:last-child a{border:0}
+aside .cta-box{background:var(--navy);border-color:var(--navy);color:#fff}
+.cta-box h3{color:#fff}
+.cta-box p{color:#dbe5f1;font-size:15.5px;margin:0 0 14px}
+.cta-box .btn{width:100%;justify-content:center;margin-bottom:8px}
+.band{background:var(--orange);color:#fff;padding:30px 0}
+.band .wrap{display:grid;gap:14px;align-items:center}
+.band h2{color:#fff;margin:0}
+.band p{margin:4px 0 0;color:#fff3ea}
+.band .btn-call{background:#fff;color:var(--orange-2)}
+.band .btn-wa{border-color:#fff}
+.nap{font-style:normal;line-height:1.8}
+.nap strong{color:var(--navy)}
+
+/* Footer */
+footer.site{background:var(--navy-2);color:#b9c7d8;padding:40px 0 100px;font-size:15px}
+footer.site .cols{display:grid;gap:26px}
+footer.site h3{color:#fff;font-size:16px;margin-bottom:10px}
+footer.site a{color:#dbe5f1;text-decoration:none}
+footer.site a:hover{color:#ffb27a}
+footer.site ul{list-style:none;padding:0;margin:0;columns:2;column-gap:14px}
+footer.site li{padding:3px 0}
+footer.site .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:16px;font-size:13.5px}
+
+/* Sabit ara / WhatsApp */
+.fab{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:2fr 3fr;box-shadow:0 -4px 18px rgba(0,0,0,.15)}
+.fab a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 6px;color:#fff;text-decoration:none;font-weight:800;font-size:15.5px;white-space:nowrap}
+.fab a svg{width:22px;height:22px}
+.fab .f-call{background:var(--orange)}
+.fab .f-wa{background:var(--wa)}
+
+@media (min-width:700px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .areas{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  footer.site .cols{grid-template-columns:1.2fr 1fr 1fr}
+  .band .wrap{grid-template-columns:1fr auto}
+  .wa-steps{grid-template-columns:repeat(3,1fr)}
+  .top .addr{display:block}
+}
+@media (min-width:960px){
+  body{font-size:17.5px}
+  nav.main details{display:none}
+  nav.main .desk{display:flex;gap:4px;align-items:center}
+  nav.main .desk a{padding:9px 12px;text-decoration:none;font-weight:700;color:var(--ink);border-radius:8px;font-size:15.5px}
+  nav.main .desk a.btn-call{color:#fff;margin-left:8px}
+  .hero{padding:56px 0 64px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;gap:44px}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .layout{grid-template-columns:minmax(0,1fr) 320px;gap:48px}
+  aside{position:sticky;top:84px;align-self:start}
+  section{padding:64px 0}
+  .fab{left:auto;right:20px;bottom:20px;grid-template-columns:auto;gap:10px;box-shadow:none}
+  .fab a{width:60px;height:60px;border-radius:50%;padding:0;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .fab .f-call span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .fab .f-wa{width:auto;border-radius:30px;padding:0 22px}
+  .fab{justify-items:end}
+  footer.site{padding-bottom:40px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
