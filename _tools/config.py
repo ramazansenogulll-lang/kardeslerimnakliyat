@@ -18,7 +18,22 @@ ADDRESS = {
     "district": "Serdivan",
     "city": "Sakarya",
 }
-MAPS_QUERY = "Kardeşlerim Nakliyat, Plevne Cd. No:27, Yazlık, Serdivan, Sakarya"
+# --- ÇALIŞMA SAATLERİ (kullanıcı: her gün 08:00–22:00) ---
+HOURS = [
+    ("Her gün", "08:00 – 22:00"),
+]
+OPENING_HOURS = "Mo-Su 08:00-22:00"   # şema için
+
+# --- "NEDEN BİZ" RAKAMLARI (teyit edilmemiş rakam yazmayın) ---
+# Kullanıcı tarafından teyit edildi (2026-11-07).
+STATS = [
+    ("16", "Sakarya ilçesinde hizmet"),
+    ("10+", "Yıllık tecrübe"),
+    ("2.225+", "Tamamlanan taşıma"),
+    ("8", "Kişilik ekip"),
+]
+
+MAPS_QUERY ="Kardeşlerim Nakliyat, Plevne Cd. No:27, Yazlık, Serdivan, Sakarya"
 
 # --- GÖRSELLER (tek yerden yönetilir) ---
 # Boş bırakılan anahtar için CSS/SVG yer tutucu çizilir.

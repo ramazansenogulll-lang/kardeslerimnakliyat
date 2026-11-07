@@ -215,3 +215,19 @@ Fotoğraflara baktıktan sonra genellikle kısa bir telefonla eksikleri tamamlı
 Ekibimiz konuştuğumuz saatte, bütün malzemesiyle kapınızda oluyor. Sizden tek isteğimiz, eski ve yeni evde birinin bulunması. Eşyaların nereye konacağını o kişiye sorarak yerleştiriyoruz.""",
     },
 }
+
+# Ana sayfa sık sorulan sorular (yalnızca teyitli bilgiler)
+HOME_SSS = [
+    ("Fiyatı nasıl öğrenebilirim?",
+     "En kısa yol WhatsApp. Odaların ve büyük eşyaların birkaç fotoğrafını, nereden nereye taşınacağınızı yazıp gönderin; fiyatı söyleyelim. Telefonla aramanız da yeterli."),
+    ("Keşif ücretli mi?",
+     "Hayır, keşif ücretsiz. Eşya fazlaysa ya da binada özel bir durum varsa gelip yerinde bakıyor, ardından fiyatı söylüyoruz."),
+    ("Paketleme fiyata dahil mi?",
+     "Evet. Koli, balonlu naylon, streç film ve battaniyeyle geliyoruz; paketleme ve malzeme taşıma fiyatına dahil."),
+    ("Mobilyaları söküp yeni evde kuruyor musunuz?",
+     "Evet. Gardırop, yatak ve dolapları eski evde söküyor, vida ve bağlantı parçalarını poşetleyip yeni evde yeniden kuruyoruz."),
+    ("Yüksek katlar için asansörünüz var mı?",
+     "Bina asansörüne ya da merdivene sığmayan eşyalar için dış cephe asansörüyle taşıyoruz. Eşya pencere ya da balkondan doğrudan araca iniyor."),
+    ("Hangi bölgelere hizmet veriyorsunuz?",
+     "Serdivan'daki adresimizden Sakarya'nın 16 ilçesinin tamamına gidiyoruz. Sakarya'dan Türkiye'nin diğer illerine de şehirler arası taşıma yapıyoruz."),
+]
