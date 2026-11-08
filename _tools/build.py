@@ -64,6 +64,9 @@ LOGO = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48
         '<path d="M9 17h19v14H9z" fill="#c2410c"/><path d="M28 21h6.5l5 5V31H28z" fill="#fff"/>'
         '<circle cx="15" cy="33" r="3.5" fill="#fff" stroke="#0e2236" stroke-width="2"/>'
         '<circle cx="33" cy="33" r="3.5" fill="#fff" stroke="#0e2236" stroke-width="2"/></svg>')
+# Yatay logo (_tools/logo.py üretir; 581x112 kaynak, ekranda 56 px yükseklik)
+LOGO_IMG = ('<img src="/assets/img/logo-yatay.png" alt="Kardeşlerim Evden Eve Nakliyat" '
+            'width="290" height="56" decoding="async">')
 
 # Fotoğraf gelene kadar kullanılan illüstrasyon (şehir silueti önünde kamyon)
 PLACEHOLDER = (
@@ -186,7 +189,7 @@ def header(path):
     return f"""<a class="skip" href="#icerik">İçeriğe geç</a>
 <div class="top"><div class="wrap"><div class="t-info"><span>{ICON["pin"]}{esc(C.ADDRESS["street"])}, {esc(C.ADDRESS["district"])}/{esc(C.ADDRESS["city"])}</span><span>{ICON["clock"]}{esc(hours_text())}</span></div><a href="tel:{TEL}">{esc(C.PHONE)}</a></div></div>
 <header class="site"><div class="wrap">
-<a class="logo" href="/">{LOGO}<span>Kardeşlerim<small>NAKLİYAT · SAKARYA</small></span></a>
+<a class="logo" href="/">{LOGO_IMG}</a>
 <nav class="main" aria-label="Ana menü"><details><summary><i></i>Menü</summary><ul>{items}</ul></details>
 <div class="desk">{desk}{btn_call("btn btn-call", "Hemen Ara")}</div></nav>
 </div></header>"""
@@ -197,7 +200,7 @@ def footer():
     svc = "".join(f'<li><a href="/hizmetler/#{s["id"]}">{esc(s["name"])}</a></li>' for s in SERVICES)
     hours = "".join(f"<div><dt>{esc(d)}</dt><dd>{esc(h)}</dd></div>" for d, h in C.HOURS)
     return f"""<footer class="site"><div class="wrap"><div class="cols">
-<div class="f-about"><a class="logo" href="/">{LOGO}<span>Kardeşlerim<small>NAKLİYAT · SAKARYA</small></span></a>
+<div class="f-about"><a class="logo f-logo" href="/">{LOGO_IMG}</a>
 <p>Serdivan merkezli nakliyat firması. Sakarya'nın 16 ilçesinde evden eve, şehirler arası, ofis ve asansörlü taşıma; paketleme ve mobilya söküm-montaj.</p>
 <div class="f-contact"><div>{ICON["pin"]}<span>{esc(ADDR_LINE)}<br><a href="{esc(MAPS_URL)}" target="_blank" rel="noopener">Haritada aç →</a></span></div>
 <div>{ICON["phone"]}<a href="tel:{TEL}">{esc(C.PHONE)}</a></div>
@@ -264,7 +267,9 @@ def page(path, title, desc, body, schema, og_type="website"):
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e2236">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jakarta-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jakarta-latin-ext.woff2" crossorigin>
