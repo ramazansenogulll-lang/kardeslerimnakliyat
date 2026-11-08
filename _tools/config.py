@@ -44,7 +44,7 @@ IMAGES = {
     "hakkimizda": "/assets/img/sakarya-evden-eve-nakliyat-ekip-1200.avif",     # hakkımızda sayfası
     "hizmetler": "/assets/img/tabak-paketleme-1200.avif",                      # hizmetler sayfası üst görsel
     "iletisim": "/assets/img/sakarya-sehirler-arasi-nakliyat-kamyonu-1200.avif",  # iletişim sayfası
-    "ilce": "/assets/img/sakarya-evden-eve-nakliyat-kamyon-yukleme-1200.avif",  # ilçe sayfalarının ortak üst görseli
+    "ilce": "/assets/img/sakarya-evden-eve-nakliyat-panelvan-1200.avif",  # ilçe sayfalarının ortak üst görseli
     # İlçeye özel görsel isterseniz: "ilce-sapanca": "/assets/img/sapanca.avif"
     # Hizmet kartları (svc-<id>)
     "svc-evden-eve": "/assets/img/sakarya-evden-eve-nakliyat-ekip-640.avif",
@@ -54,7 +54,7 @@ IMAGES = {
     "svc-asansorlu-tasima": "/assets/img/serdivan-asansorlu-tasima-640.avif",
     "svc-esya-depolama": "/assets/img/mobilya-paketleme-strec-640.avif",
     "svc-ofis-tasima": "/assets/img/sakarya-ofis-tasima-640.avif",
-    "svc-parca-esya": "/assets/img/serdivan-parca-esya-tasima-640.avif",
+    "svc-parca-esya": "/assets/img/serdivan-parca-esya-tasima-kamyon-640.avif",
 }
 
 # Konum (Yazlık Mah. Plevne Cd., Serdivan; OpenStreetMap cadde düzeyi). Şema ve geo meta'da kullanılır.
