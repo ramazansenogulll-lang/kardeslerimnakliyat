@@ -223,6 +223,8 @@ def business_schema():
                     "postalCode": C.ADDRESS["postal"], "addressLocality": C.ADDRESS["district"],
                     "addressRegion": C.ADDRESS["city"], "addressCountry": "TR"},
         "hasMap": MAPS_URL,
+        **({"geo": {"@type": "GeoCoordinates", "latitude": C.GEO[0], "longitude": C.GEO[1]}}
+           if getattr(C, "GEO", None) else {}),
         **({"openingHours": C.OPENING_HOURS} if getattr(C, "OPENING_HOURS", "") else {}),
         "areaServed": [{"@type": "AdministrativeArea", "name": f'{d["name"]}, Sakarya'} for d in ILCELER],
         "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["name"]}} for s in SERVICES],
@@ -249,6 +251,8 @@ def page(path, title, desc, body, schema, og_type="website"):
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="geo.region" content="TR-54">
 <meta name="geo.placename" content="Serdivan, Sakarya">
+<meta name="geo.position" content="{C.GEO[0]};{C.GEO[1]}">
+<meta name="ICBM" content="{C.GEO[0]}, {C.GEO[1]}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="{esc(C.NAME)}">
