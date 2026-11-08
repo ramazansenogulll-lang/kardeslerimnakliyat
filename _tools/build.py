@@ -17,6 +17,7 @@ import config as C  # noqa: E402
 from content_main import PAGES, SERVICES, STEPS, HOME_SSS  # noqa: E402
 from content_ilce import ILCELER  # noqa: E402
 from content_sss import SSS  # noqa: E402
+from content_legal import LEGAL  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = date.today().isoformat()
@@ -199,6 +200,7 @@ def footer():
     ilce = "".join(f'<li><a href="/{d["slug"]}/">{esc(d["name"])}</a></li>' for d in ILCELER)
     svc = "".join(f'<li><a href="/hizmetler/#{s["id"]}">{esc(s["name"])}</a></li>' for s in SERVICES)
     hours = "".join(f"<div><dt>{esc(d)}</dt><dd>{esc(h)}</dd></div>" for d, h in C.HOURS)
+    legal_links = " · ".join(f'<a href="/{x["slug"]}/">{esc(x["crumb"])}</a>' for x in LEGAL)
     return f"""<footer class="site"><div class="wrap"><div class="cols">
 <div class="f-about"><a class="logo f-logo" href="/">{LOGO_IMG}</a>
 <p>Serdivan merkezli nakliyat firması. Sakarya'nın 16 ilçesinde evden eve, şehirler arası, ofis ve asansörlü taşıma; paketleme ve mobilya söküm-montaj.</p>
@@ -209,7 +211,7 @@ def footer():
 <div><h3>Hizmet bölgeleri</h3><ul class="f-ilce">{ilce}</ul></div>
 <div><h3>Çalışma saatleri</h3><dl class="hours">{hours}</dl>
 <h3 style="margin-top:26px">Kurumsal</h3><ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/hizmetler/">Hizmetler</a></li><li><a href="/iletisim/">İletişim</a></li></ul></div>
-</div><div class="copy"><span>© {date.today().year} {esc(C.NAME)}. Tüm hakları saklıdır.</span><span>Serdivan, Sakarya</span></div></div></footer>
+</div><div class="copy"><span>© {date.today().year} {esc(C.NAME)}. Tüm hakları saklıdır.</span><span>{legal_links}</span></div></div></footer>
 <div class="fab">{btn_call("f-call", "Ara")}{btn_wa("f-wa", "Fotoğrafla Fiyat Al")}</div>"""
 
 
@@ -396,6 +398,15 @@ def aside(extra=""):
 
 
 
+AYLAR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+
+
+def legal_text(body):
+    d = date.today()
+    return (body.replace("{NAME}", C.NAME).replace("{ADDR}", ADDR_LINE).replace("{PHONE}", C.PHONE)
+            .replace("{TEL}", TEL).replace("{SITE}", U.replace("https://", "")).replace("{DATE}", f"{d.day} {AYLAR[d.month - 1]} {d.year}"))
+
+
 def write(path, content):
     full = os.path.join(ROOT, path.strip("/").replace("/", os.sep), "index.html") if path != "/" else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -493,24 +504,63 @@ def build():
     html404 = html404.replace('content="index, follow, max-image-preview:large"', 'content="noindex"')
     open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8", newline="\n").write(html404)
 
+    # Yasal sayfalar (Gizlilik/Çerez, KVKK, Kullanım Koşulları)
+    for x in LEGAL:
+        path = f'/{x["slug"]}/'
+        text = legal_text(x["body"])
+        body = f"""<section class="hero hero-small legal-hero"><div class="wrap"><div><p class="crumbs"><a href="/">Ana Sayfa</a> / {esc(x["crumb"])}</p><h1>{esc(x["h1"])}</h1></div></div></section>
+<section><div class="wrap"><article class="prose legal">{md(text)}</article></div></section>"""
+        sch = base_schema + [breadcrumb([("Ana Sayfa", "/"), (x["crumb"], path)]),
+                             {"@type": "WebPage", "url": U + path, "name": x["h1"], "inLanguage": "tr-TR",
+                              "dateModified": TODAY, "publisher": {"@id": U + "/#firma"}}]
+        write(path, page(path, x["title"], x["desc"], body, sch))
+
     # sitemap, robots, llms
-    urls = ["/", "/hizmetler/", "/hakkimizda/", "/iletisim/"] + [f'/{d["slug"]}/' for d in ILCELER]
+    urls = ["/", "/hizmetler/", "/hakkimizda/", "/iletisim/"] + [f'/{d["slug"]}/' for d in ILCELER] + [f'/{x["slug"]}/' for x in LEGAL]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
         sm.append(f"  <url><loc>{U}{u}</loc><lastmod>{TODAY}</lastmod></url>")
     sm.append("</urlset>")
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write("\n".join(sm) + "\n")
 
-    robots = "User-agent: *\nAllow: /\n\n" + "".join(f"User-agent: {b}\nAllow: /\n\n" for b in ("GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended")) + f"Sitemap: {U}/sitemap.xml\n"
+    # Arama ve yapay zekâ botları (Google Ads denetleyicisi AdsBot ayrıca açıkça izinli)
+    BOTS = ("Googlebot", "AdsBot-Google", "AdsBot-Google-Mobile", "Mediapartners-Google", "Bingbot",
+            "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+            "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot", "Applebot-Extended",
+            "meta-externalagent", "CCBot", "YandexBot")
+    robots = ("User-agent: *\nAllow: /\n\n" + "".join(f"User-agent: {b}\nAllow: /\n\n" for b in BOTS)
+              + f"Sitemap: {U}/sitemap.xml\n\n# Yapay zekâ özeti: {U}/llms.txt\n# Tam içerik: {U}/llms-full.txt\n")
     open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8", newline="\n").write(robots)
 
-    llms = [f"# {C.NAME}", "",
-            f"> {C.NAME}, Serdivan/Sakarya merkezli bir nakliyat firmasıdır. Sakarya'nın 16 ilçesinde evden eve (şehir içi) nakliyat, paketleme, mobilya söküm-montaj, asansörlü taşıma hizmeti verir. Yerinde keşif ücretsizdir, paketleme ve malzeme taşıma fiyatına dahildir; Sakarya'dan Türkiye'nin her iline şehirler arası taşıma yapar.", "",
-            f"- Telefon / WhatsApp: {C.PHONE} ({TEL})", f"- Adres: {ADDR_LINE}", f"- Çalışma saatleri: {hours_text()}", f"- Web: {U}/", "",
-            "## Hizmetler"] + [f"- [{s['name']}]({U}/hizmetler/#{s['id']}): {s['short']}" for s in SERVICES] + [
+    lat, lng = C.GEO
+    head = [f"# {C.NAME}", "",
+            f"> {C.NAME}, Serdivan/Sakarya merkezli bir evden eve nakliyat firmasıdır. Sakarya'nın 16 ilçesinde şehir içi, Sakarya'dan Türkiye'nin her iline şehirler arası taşıma yapar. Yerinde keşif ücretsizdir; paketleme, mobilya söküm-montaj ve asansörlü taşıma fiyata dahildir.", "",
+            f"- Telefon / WhatsApp: {C.PHONE} ({TEL})", f"- Adres: {ADDR_LINE}", f"- Konum: {lat}, {lng}",
+            f"- Çalışma saatleri: {hours_text()}", f"- Web: {U}/",
+            "- Ekip ve tecrübe: 10 yılı aşkın tecrübe, 2.225'ten fazla tamamlanmış taşıma, 8 kişilik ekip",
+            "- Fiyat: Sabit fiyat listesi yoktur; fiyat eşya miktarı, kat/asansör durumu, mesafe ve tarihe göre ücretsiz keşif ya da WhatsApp'tan gönderilen fotoğraflarla belirlenir.",
+            "- Verilmeyen hizmetler: eşya depolama, piyano taşıma", ""]
+    legal_md = ["", "## Yasal", ] + [f"- [{x['crumb']}]({U}/{x['slug']}/)" for x in LEGAL]
+    llms = head + ["## Hizmetler"] + [f"- [{s['name']}]({U}/hizmetler/#{s['id']}): {s['short']}" for s in SERVICES] + [
             "", "## Hizmet bölgeleri (Sakarya ilçeleri)"] + [f"- [{d['name']}]({U}/{d['slug']}/): {d['desc']}" for d in ILCELER] + [
-            "", "## Sayfalar", f"- [Ana sayfa]({U}/)", f"- [Hizmetler]({U}/hizmetler/)", f"- [Hakkımızda]({U}/hakkimizda/)", f"- [İletişim]({U}/iletisim/)", ""]
+            "", "## Sayfalar", f"- [Ana sayfa]({U}/)", f"- [Hizmetler]({U}/hizmetler/)", f"- [Hakkımızda]({U}/hakkimizda/)", f"- [İletişim]({U}/iletisim/)",
+            f"- [Tam içerik (llms-full.txt)]({U}/llms-full.txt)"] + legal_md + [""]
     open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8", newline="\n").write("\n".join(llms))
+
+    # llms-full.txt: sitenin tüm metni tek dosyada (yapay zekâ asistanları için)
+    def qa(items):
+        return [f"**{q}**\n{a}\n" for q, a in items]
+    full = head + [f"## Ana sayfa ({U}/)", "", PAGES["home"]["body"], "", "### Sık sorulanlar", ""] + qa(HOME_SSS)
+    full += ["", f"## Hizmetler ({U}/hizmetler/)", "", PAGES["services"]["body"], ""]
+    for s in SERVICES:
+        full += [f"### {s['name']}", "", s["text"], ""]
+    for key, path in (("about", "/hakkimizda/"), ("contact", "/iletisim/")):
+        full += [f"## {PAGES[key]['crumb']} ({U}{path})", "", PAGES[key]["body"], ""]
+    for d in ILCELER:
+        full += [f"## {d['name']} evden eve nakliyat ({U}/{d['slug']}/)", "", d["body"].replace("\n## ", "\n### "), "", "### Sık sorulanlar", ""] + qa(SSS[d["slug"]])
+    full += legal_md + [""]
+    full_txt = re.sub(r"\]\(/", f"]({U}/", "\n".join(full))
+    open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8", newline="\n").write(full_txt)
 
     open(os.path.join(ROOT, "CNAME"), "w", encoding="utf-8", newline="\n").write("kardeslerimnakliyat.com.tr\n")
     open(os.path.join(ROOT, ".nojekyll"), "w").close()

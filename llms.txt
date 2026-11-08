@@ -1,11 +1,15 @@
 # Kardeşlerim Nakliyat
 
-> Kardeşlerim Nakliyat, Serdivan/Sakarya merkezli bir nakliyat firmasıdır. Sakarya'nın 16 ilçesinde evden eve (şehir içi) nakliyat, paketleme, mobilya söküm-montaj, asansörlü taşıma hizmeti verir. Yerinde keşif ücretsizdir, paketleme ve malzeme taşıma fiyatına dahildir; Sakarya'dan Türkiye'nin her iline şehirler arası taşıma yapar.
+> Kardeşlerim Nakliyat, Serdivan/Sakarya merkezli bir evden eve nakliyat firmasıdır. Sakarya'nın 16 ilçesinde şehir içi, Sakarya'dan Türkiye'nin her iline şehirler arası taşıma yapar. Yerinde keşif ücretsizdir; paketleme, mobilya söküm-montaj ve asansörlü taşıma fiyata dahildir.
 
 - Telefon / WhatsApp: 0534 043 11 91 (+905340431191)
 - Adres: Yazlık Mah. Plevne Cd. No:27 D:2, 54130 Serdivan/Sakarya
+- Konum: 40.8042795, 30.360317
 - Çalışma saatleri: Her gün 08:00 – 22:00
 - Web: https://kardeslerimnakliyat.com.tr/
+- Ekip ve tecrübe: 10 yılı aşkın tecrübe, 2.225'ten fazla tamamlanmış taşıma, 8 kişilik ekip
+- Fiyat: Sabit fiyat listesi yoktur; fiyat eşya miktarı, kat/asansör durumu, mesafe ve tarihe göre ücretsiz keşif ya da WhatsApp'tan gönderilen fotoğraflarla belirlenir.
+- Verilmeyen hizmetler: eşya depolama, piyano taşıma
 
 ## Hizmetler
 - [Evden Eve Nakliyat](https://kardeslerimnakliyat.com.tr/hizmetler/#evden-eve): Paketleme, söküm-kurulum ve taşıma; aynı gün içinde yeni evinizde.
@@ -39,3 +43,9 @@
 - [Hizmetler](https://kardeslerimnakliyat.com.tr/hizmetler/)
 - [Hakkımızda](https://kardeslerimnakliyat.com.tr/hakkimizda/)
 - [İletişim](https://kardeslerimnakliyat.com.tr/iletisim/)
+- [Tam içerik (llms-full.txt)](https://kardeslerimnakliyat.com.tr/llms-full.txt)
+
+## Yasal
+- [Gizlilik Politikası](https://kardeslerimnakliyat.com.tr/gizlilik-politikasi/)
+- [KVKK Aydınlatma Metni](https://kardeslerimnakliyat.com.tr/kvkk/)
+- [Kullanım Koşulları](https://kardeslerimnakliyat.com.tr/kullanim-kosullari/)

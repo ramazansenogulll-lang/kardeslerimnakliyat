@@ -41,6 +41,8 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .logo small{display:block;font:600 10.5px/1.4 var(--b);color:var(--muted);letter-spacing:.16em;margin-top:3px}
 .logo svg{width:44px;height:44px;flex:none}
 .logo img{display:block;height:56px;width:auto}
+.legal-hero .wrap{display:block}
+.prose.legal{max-width:780px;margin:0 auto}
 .f-logo{display:inline-flex;background:#fff;border-radius:14px;padding:10px 14px}
 .f-logo img{height:46px}
 @media (max-width:600px){.logo img{height:40px}}
