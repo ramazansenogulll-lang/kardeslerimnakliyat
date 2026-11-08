@@ -12,8 +12,6 @@ SSS = {
     "serdivan-evden-eve-nakliyat": [
         ("Site yönetimi taşınma için izin istiyor, bunu siz mi alıyorsunuz?",
          "İzni dairenin sahibi ya da kiracısı olarak sizin istemeniz gerekiyor ama ne yazılacağını, hangi saatlerin uygun olduğunu biz söylüyoruz. Asansör koruması ve araç park yeri gibi konularda yönetimle doğrudan biz de konuşabiliyoruz."),
-        ("Öğrenci evimi yaz tatilinde boşaltmam gerekiyor, eşyam bir süre bekleyebilir mi?",
-         "Evet. Eşyayı paketleyip depoda tutabiliyor, eylülde yeni evinize getirebiliyoruz. Az eşya için depolama ücreti de düşük kalıyor. Birkaç koli ve bir yatak için bile bu hizmeti veriyoruz."),
         ("Serdivan içinde keşfe ne kadar sürede gelirsiniz?",
          "Adresimiz Yazlık'ta olduğu için Serdivan'ın çoğu yerine on dakikada varıyoruz. Gün içinde sahadaysak akşamüstü, değilsek aynı gün ya da ertesi sabah geliyoruz."),
     ],
@@ -54,8 +52,6 @@ SSS = {
          "Mayıs ortasında aramanız iyi olur. Haziranın ilk iki haftası ve hafta sonları çabuk doluyor. Hafta içi bir gün seçebilirseniz yer bulmak daha kolay."),
         ("Sitemize kamyon giremiyor, yol kumlu. Yine de taşınabilir mi?",
          "Taşınır. Aracı site girişine ya da sert zemine bırakıp eşyayı oradan taşıyoruz. Mesafe uzunsa ekibi bir kişi artırıyoruz. Bunu fotoğraflardan görüp fiyata baştan ekliyoruz."),
-        ("Kış boyunca yazlık eşyamı saklayabilir misiniz?",
-         "Evet. Sezon sonunda eşyayı paketleyip kapalı depoya alıyor, bahar geldiğinde yeniden yazlığa getiriyoruz. Depoya giren her parçanın listesini size veriyoruz."),
     ],
     "kocaali-evden-eve-nakliyat": [
         ("Kocaali'ye her hafta geliyor musunuz?",
@@ -118,8 +114,6 @@ SSS = {
          "Taşımaya başlamadan önce merdivenleri, kapı kasalarını ve köşeleri koruma malzemesiyle kaplıyoruz. Büyük parçaları gerekirse söküp parça parça taşıyoruz. Amacımız eve hiç dokunmadan çıkmak."),
         ("Taraklı'ya kadar gelip aynı gün dönebiliyor musunuz?",
          "Küçük ve orta boy taşımalarda evet. Sabah erken çıkıp akşam dönüyoruz. Büyük bir ev ya da uzak bir hedef varsa işi iki güne yaymayı öneriyoruz."),
-        ("Pansiyonumuzun mobilyalarını kış boyunca depolayabilir misiniz?",
-         "Evet. Mobilyaları paketleyip depoya alıyor, sezon başında yeniden getirip yerleştiriyoruz. Parça listesini çıkarıp size veriyoruz."),
     ],
     "kaynarca-evden-eve-nakliyat": [
         ("Kaynarca'dan Karasu'ya taşınma ne kadar sürer?",

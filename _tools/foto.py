@@ -31,8 +31,6 @@ PHOTOS = [
      "Taşınma öncesi tabak ve bardakların balonlu naylonla paketlenmesi"),
     ("paketleme3.jpg", "mobilya-paketleme-strec",
      "Taşınma için streç filmle paketlenmiş mobilyalar"),
-    ("Taşınma Günü_ Kardeşlerim Nakliyat.png", "sakarya-evden-eve-nakliyat-panelvan",
-     "Kardeşlerim Nakliyat ekibi evden eve taşımada eşyaları panelvana yüklüyor"),
     ("Modern Ofis Taşıma Operasyonu.png", "sakarya-ofis-tasima",
      "Kardeşlerim Nakliyat ekibi ofis taşımasında paketlenmiş masa ve sandalyeleri taşıyor"),
     ("Kardeşlerim Taşımacılıkta Yoğun Gün.png", "serdivan-parca-esya-tasima-kamyon",

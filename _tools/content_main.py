@@ -34,11 +34,6 @@ Dosya dolaplarını içindekilerle birlikte etiketliyoruz, kabloları masa numar
      "text": """Bina asansörüne sığmayan koltuklar, merdiven boşluğunda dönmeyen gardıroplar için dış cephe asansörü kullanıyoruz. Eşya pencereden ya da balkondan doğrudan kamyona iniyor. Merdivenlerde sürtünme olmadığı için hem eşya hem bina duvarları zarar görmüyor.
 
 Asansör kurulumu için binanın önünde araç park edecek yer gerekiyor. Sokağınızı ve kat bilgisini telefonda sorduğumuzda bu yüzden soruyoruz. Gerekirse taşınma gününden önce gelip yerinde bakıyoruz."""},
-    {"id": "esya-depolama", "icon": "depo", "name": "Eşya Depolama",
-     "short": "Ev tadilatı ya da tarih uyuşmazlığında eşyanız kapalı depoda bekler.",
-     "text": """Bazen eski evden çıkış ile yeni eve giriş aynı güne denk gelmiyor. Tadilat uzuyor ya da yurt dışına bir süreliğine gidiliyor. Böyle durumlarda eşyanızı paketleyip kapalı ve kuru bir depoda tutuyoruz.
-
-Depoya giren her parçanın listesini çıkarıp size veriyoruz. Süre birkaç haftadan birkaç aya kadar uzayabiliyor; teslim günü geldiğinde eşyayı istediğiniz adrese getiriyoruz."""},
     {"id": "parca-esya", "icon": "parca", "name": "Parça Eşya Taşıma",
      "short": "Tek bir buzdolabı, koltuk takımı ya da birkaç koli için uygun fiyat.",
      "text": """Her taşıma bütün ev değil. İkinci el aldığınız bir buzdolabı, anneden kalan bir vitrin ya da öğrenci evine gidecek birkaç koli için koca kamyon tutmanıza gerek yok. Parça eşyayı uygun boyutta araçla taşıyoruz.
@@ -155,7 +150,7 @@ Yeni evde boşaltma, yüklemeye göre daha hızlı ilerliyor. Akşam olmadan yat
     "services": {
         "crumb": "Hizmetler",
         "title": "Nakliyat Hizmetlerimiz | Evden Eve, Ofis, Asansörlü Taşıma",
-        "desc": "Evden eve nakliyat, şehirler arası taşıma, ofis taşıma, asansörlü taşıma, eşya depolama ve parça eşya taşıma. Sakarya geneli, Serdivan çıkışlı.",
+        "desc": "Evden eve nakliyat, şehirler arası taşıma, ofis taşıma, asansörlü taşıma ve parça eşya taşıma. Sakarya geneli, Serdivan çıkışlı.",
         "h1": "Nakliyat <span>hizmetlerimiz</span>",
         "lead": "Tek bir buzdolabından komple bir ofise kadar; Sakarya içinde ve Sakarya dışına yaptığımız taşımaların hepsi bu sayfada.",
         "body": """Aşağıda yaptığımız işleri tek tek anlattık. Çoğu taşıma bunların birkaçını birlikte içeriyor. Örneğin Serdivan'daki bir 4. kat daireden İstanbul'a taşınan bir aile için hem paketleme, hem asansörlü taşıma, hem de şehirler arası nakliyat yapıyoruz. Hangisine ihtiyacınız olduğundan emin değilseniz arayın, birlikte karar verelim.""",

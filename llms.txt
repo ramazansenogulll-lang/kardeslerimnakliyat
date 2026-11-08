@@ -14,7 +14,6 @@
 - [Şehirler Arası Nakliyat](https://kardeslerimnakliyat.com.tr/hizmetler/#sehirler-arasi): Sakarya'dan İstanbul, Ankara, İzmir ve diğer illere planlı taşıma.
 - [Ofis Taşıma](https://kardeslerimnakliyat.com.tr/hizmetler/#ofis-tasima): Hafta sonu ya da mesai sonrası taşıma; işiniz durmasın.
 - [Asansörlü Taşıma](https://kardeslerimnakliyat.com.tr/hizmetler/#asansorlu-tasima): Dış cephe asansörüyle yüksek katlara hızlı ve güvenli taşıma.
-- [Eşya Depolama](https://kardeslerimnakliyat.com.tr/hizmetler/#esya-depolama): Ev tadilatı ya da tarih uyuşmazlığında eşyanız kapalı depoda bekler.
 - [Parça Eşya Taşıma](https://kardeslerimnakliyat.com.tr/hizmetler/#parca-esya): Tek bir buzdolabı, koltuk takımı ya da birkaç koli için uygun fiyat.
 
 ## Hizmet bölgeleri (Sakarya ilçeleri)

@@ -273,10 +273,6 @@ Sahil sitelerinin bir kısmında yollar kumlu ya da toprak. Bazı sitelere büy�
 
 Son yıllarda Karasu'ya yerleşip kışı da burada geçiren emekliler arttı. Bu ailelerin taşımaları genellikle büyük şehirden Karasu'ya, tam bir ev boyutunda oluyor. [Şehirler arası nakliyat](/hizmetler/#sehirler-arasi) ile eşyayı İstanbul ya da başka bir ilden alıp Karasu'daki yeni eve yerleştiriyoruz.
 
-## Eşya depolama
-
-Yazlığını tadilata sokan ya da kışın evini kiraya veren aileler için [eşya depolama](/hizmetler/#esya-depolama) hizmetimiz de var. Eşyayı paketleyip kapalı depoda tutuyor, istediğiniz zaman geri getiriyoruz.
-
 ## Fiyat ve tarih
 
 Karasu'nun hangi tarafında olduğunuzu, taşınacak eşyayı ve hedef adresi söyleyin. Sezon dönemlerinde mümkün olduğunca erken arayın.""",

@@ -35,7 +35,7 @@ Sapanca merkezde, Göl Mahallesi, İlmiye ve Yeni Mahalle tarafında apartmanlar
 
 ## Bungalov ve tesisler
 
-Bungalov işletmeleri ve butik oteller için mobilya ve ekipman taşıması da yapıyoruz. Sezon öncesi yeni eşyanın yerleştirilmesi ya da sezon sonunda eşyanın depoya kaldırılması gibi işlerde [eşya depolama](/hizmetler/#esya-depolama) hizmetimizden de yararlanabilirsiniz.
+Bungalov işletmeleri ve butik oteller için mobilya ve ekipman taşıması da yapıyoruz. Sezon öncesi yeni eşyanın getirilip yerleştirilmesi gibi işleri de üstleniyoruz.
 
 ## Sapanca'da keşif
 
@@ -269,7 +269,7 @@ Bazı konaklarda büyük parçaların merdivenden dönmesi mümkün olmuyor. Bu 
 
 ## Konak pansiyonlar
 
-Taraklı'da tarihi konakların bir kısmı pansiyon ve butik otel olarak işletiliyor. Bu işletmeler için mobilya ve ekipman taşıması da yapıyoruz. Sezon öncesi yeni eşyanın yerleştirilmesi ya da tadilat sırasında eşyanın geçici olarak kaldırılması gibi işlerde [eşya depolama](/hizmetler/#esya-depolama) hizmetimizden de yararlanabilirsiniz.
+Taraklı'da tarihi konakların bir kısmı pansiyon ve butik otel olarak işletiliyor. Bu işletmeler için mobilya ve ekipman taşıması da yapıyoruz. Sezon öncesi yeni eşyanın getirilip yerleştirilmesi gibi işleri de üstleniyoruz.
 
 ## Köy evleri
 

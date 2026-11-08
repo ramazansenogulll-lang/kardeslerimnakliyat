@@ -44,15 +44,14 @@ IMAGES = {
     "hakkimizda": "/assets/img/sakarya-evden-eve-nakliyat-ekip-1200.avif",     # hakkımızda sayfası
     "hizmetler": "/assets/img/tabak-paketleme-1200.avif",                      # hizmetler sayfası üst görsel
     "iletisim": "/assets/img/sakarya-sehirler-arasi-nakliyat-kamyonu-1200.avif",  # iletişim sayfası
-    "ilce": "/assets/img/sakarya-evden-eve-nakliyat-panelvan-1200.avif",  # ilçe sayfalarının ortak üst görseli
+    "ilce": "/assets/img/serdivan-asansorlu-tasima-1200.avif",  # ilçe sayfalarının ortak üst görseli
     # İlçeye özel görsel isterseniz: "ilce-sapanca": "/assets/img/sapanca.avif"
     # Hizmet kartları (svc-<id>)
     "svc-evden-eve": "/assets/img/sakarya-evden-eve-nakliyat-ekip-640.avif",
-    "svc-paketleme": "/assets/img/tabak-paketleme-640.avif",
+    "svc-paketleme": "/assets/img/mobilya-paketleme-strec-640.avif",
     "svc-mobilya-montaj": "/assets/img/mobilya-sokum-montaj-640.avif",
     "svc-sehirler-arasi": "/assets/img/sakarya-sehirler-arasi-nakliyat-kamyonu-640.avif",
     "svc-asansorlu-tasima": "/assets/img/serdivan-asansorlu-tasima-640.avif",
-    "svc-esya-depolama": "/assets/img/mobilya-paketleme-strec-640.avif",
     "svc-ofis-tasima": "/assets/img/sakarya-ofis-tasima-640.avif",
     "svc-parca-esya": "/assets/img/serdivan-parca-esya-tasima-kamyon-640.avif",
 }
