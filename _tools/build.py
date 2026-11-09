@@ -242,6 +242,22 @@ def breadcrumb(items):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": U + p} for i, (n, p) in enumerate(items)]}
 
 
+GTM_ID = "GTM-MB7G2Z36"
+GTM_HEAD = """<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','""" + GTM_ID + """');</script>
+<!-- End Google Tag Manager -->"""
+GTM_BODY = """<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=""" + GTM_ID + """"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->"""
+# Arama ve WhatsApp tıklamalarını GTM'e olay olarak gönderir (Ads dönüşümleri ve GA4 bu olaylara bağlı).
+TRACK_JS = """<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href').toLowerCase();var ev=h.indexOf('tel:')===0?'arama_tiklama':(h.indexOf('wa.me')>-1||h.indexOf('whatsapp.com')>-1)?'whatsapp_tiklama':null;if(ev){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:ev});}},true);</script>"""
+
+
 def page(path, title, desc, body, schema, og_type="website"):
     url = U + path
     ld = json.dumps({"@context": "https://schema.org", "@graph": schema}, ensure_ascii=False, separators=(",", ":"))
@@ -249,6 +265,7 @@ def page(path, title, desc, body, schema, og_type="website"):
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+{GTM_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
@@ -280,11 +297,13 @@ def page(path, title, desc, body, schema, og_type="website"):
 <script type="application/ld+json">{ld}</script>
 </head>
 <body>
+{GTM_BODY}
 {header(path)}
 <main id="icerik">
 {body}
 </main>
 {footer()}
+{TRACK_JS}
 </body>
 </html>
 """
